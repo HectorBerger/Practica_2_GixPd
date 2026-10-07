@@ -1,0 +1,16 @@
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements-server.txt .
+
+RUN pip install --no-cache-dir -r requirements-server.txt
+
+COPY main-server.py .
+
+EXPOSE 5000
+
+ENV MODEL_PATH=model.pkl
+
+CMD ["python","main-server.py"]
