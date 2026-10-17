@@ -8,7 +8,7 @@ RUN pip install --trusted-host --no-cache-dir -r requirements-train.txt
 
 COPY main-train.py .
 
-ENV MODEL_PATH=model.pkl
+ENV MODEL_PATH=/app/models/model.pkl
 
 CMD ["python", "main-train.py"]
 

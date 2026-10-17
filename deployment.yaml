@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: model-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: model-server
@@ -26,7 +26,7 @@ spec:
               key: MODEL_PATH
         volumeMounts:
         - name: shared-model-volume
-          mountPath: /app
+          mountPath: /app/models
         resources:
           requests:
             memory: "256Mi"
@@ -34,18 +34,18 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 5000
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 5000
-          initialDelaySeconds: 5
-          periodSeconds: 10
+#        livenessProbe:
+#          httpGet:
+#            path: /
+#            port: 5000
+#          initialDelaySeconds: 5
+#          periodSeconds: 30
+#        readinessProbe:
+#          httpGet:
+#            path: /
+#            port: 5000
+#          initialDelaySeconds: 5
+#          periodSeconds: 30
       volumes:
       - name: shared-model-volume
         persistentVolumeClaim:

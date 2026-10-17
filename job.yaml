@@ -17,7 +17,7 @@ spec:
               key: MODEL_PATH
         volumeMounts:
         - name: shared-model-volume
-          mountPath: /app
+          mountPath: /app/models
         resources:
           requests:
             memory: "256Mi"
