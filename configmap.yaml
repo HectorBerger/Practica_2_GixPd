@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: model-config
 data:
-  MODEL_PATH: "/app/models/model.pkl"
+  MODEL_PATH: "/app/models/model.pkl.npy"
