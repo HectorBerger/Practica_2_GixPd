@@ -14,7 +14,7 @@ def model_documentation():
 <h1>Welcome to customer spent prediction model</h1>
 
 <p>Please use our api to use the model:</p>
-<p>curl localhost:8000/model?minutes=5</p>
+<p>curl localhost:5000/model?minutes=5</p>
 """
 
 

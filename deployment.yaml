@@ -34,18 +34,18 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
-#        livenessProbe:
-#          httpGet:
-#            path: /
-#            port: 5000
-#          initialDelaySeconds: 5
-#          periodSeconds: 30
-#        readinessProbe:
-#          httpGet:
-#            path: /
-#            port: 5000
-#          initialDelaySeconds: 5
-#          periodSeconds: 30
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 30
       volumes:
       - name: shared-model-volume
         persistentVolumeClaim:
